@@ -1,0 +1,86 @@
+@using Microsoft.AspNetCore.Http;
+
+@{
+    if(Context.Session.GetString("idUsuario") == null){
+        Layout = "MasterPageDeslogado";
+        }
+    else{
+        Layout = "MasterPageLogado";
+    }
+}
+
+
+ @section script {
+        <script src="/JavaScript/Empresa/default.js"></script>
+        <script src="/JavaScript/Empresa/index.js"></script>
+    }
+     @section style {
+        <link href="/css/Empresa.css" rel="stylesheet" >
+    }
+<body>
+    <main>
+        <div class="banner">
+            <div>
+                <h1 id="text-empresa-banner">Sobre Carfel</h1>
+                <img src="/Arquivo_img/Empresa_imagens/sobre_banner.png" alt="banner image">
+
+            </div>
+        </div>
+        <div class="divisao">
+            <img src="/Arquivo_img/Empresa_imagens/quebra-logo-checkpoint.png" alt="Logo do serviço checkpoint oferecido pela empresa Carfel">
+            <h1 id="planos">Nossa História</h1>
+            <div class="retangulo-divisao"></div>
+        </div>
+        <div class="primeiro-paragrafo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum reiciendis natus magnam perspiciatis. Quas
+                quam eos fugit nam maxime, aperiam ex aliquid dolores earum sunt! Mollitia vitae ex earum doloremque?</p>
+        </div>
+        <div class="imagem-historia">
+            <img src="/Arquivo_img/Empresa_imagens/historia-map.png" alt="historia-map">
+        </div>
+        <div class="ultimo-paragrafo">
+            <div class="ultimo-paragrafo-left">
+                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aspernatur vero quidem ad autem ut sunt maxime
+                    officia. Obcaecati modi iste voluptate neque voluptas deserunt ratione. Dicta impedit quas ad! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aspernatur vero quidem ad autem ut sunt maxime
+                    officia. Obcaecati modi iste voluptate neque voluptas deserunt ratione. Dicta impedit quas ad!</span>
+            </div>
+            <div class="ultimo-paragrafo-right">
+                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aspernatur vero quidem ad autem ut sunt maxime
+                    officia. Obcaecati modi iste voluptate neque voluptas deserunt ratione. Dicta impedit quas ad! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aspernatur vero quidem ad autem ut sunt maxime
+                    officia. Obcaecati modi iste voluptate neque voluptas deserunt ratione. Dicta impedit quas ad!</span>
+            </div>
+        </div>
+        <!-- Alteravel -->
+    </main>
+    <!-- chat -->
+    <div class="floating-chat">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <div class="chat">
+            <div class="header">
+                <span class="title">
+                    Tire suas dúvidas rápidas
+                </span>
+                <button>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+
+            </div>
+            <ul class="messages">
+                <li class="other">Olá!</li>
+                <li class="self">Olá</li>
+                <li class="other">Como posso lhe ajudar?</li>
+                <li class="self">Não estou entendendo como o software funciona</li>
+                <li class="other">Ok, digite seu e-mail que todas as instruções serão encaminhadas</li>
+                <li class="self">presidente@hotmail.com</li>
+                <li class="other">Obrigado, as informações estão lá te esperando</li>
+            </ul>
+            <div class="footer">
+                <div class="text-box" contenteditable="true" disabled="true"></div>
+                <button id="sendMessage">send</button>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <!-- fim do chat -->
+</body>

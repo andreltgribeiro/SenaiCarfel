@@ -1,0 +1,131 @@
+@using Microsoft.AspNetCore.Http;
+
+@{
+    if(Context.Session.GetString("idUsuario") == null){
+        Layout = "MasterPageDeslogado";
+        }
+    else{
+        Layout = "MasterPageLogado";
+    }
+}
+
+
+ @section script {
+        <script src="/JavaScript/Home/default.js"></script>
+        <script src="/JavaScript/Home/index.js"></script>
+    }
+     @section style {
+        <link href="/css/Home.css" rel="stylesheet" >
+    }
+
+<body>
+    
+    <main>
+        <div class="Banner">
+            <div class="conteudo-banner">
+                <div class="Banner-image-left" style="background-image: url(https://i.pinimg.com/564x/cd/d0/4b/cdd04b91a9153c7244c1d275ad55a824.jpg)"
+                    data-text="CheckPoint
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nostrum quidem eligendi est itaque perferendis, asperiores repudiandae ducimus quasi, molestias soluta nulla explicabo, aut ratione vitae consequatur earum deserunt ipsum?"></div>
+                <div class="Banner-image-right-top" style="background-image: url(https://i.pinimg.com/564x/85/03/cd/8503cdd2ce836397def016347684463a.jpg)"
+                    data-text="CheckPoint
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nostrum quidem eligendi est itaque perferendis, asperiores repudiandae ducimus quasi, molestias soluta nulla explicabo, aut ratione vitae consequatur earum deserunt ipsum?"></div>
+                <div class="Banner-image-right-bottom" style="background-image: url(https://i.pinimg.com/564x/39/2a/da/392ada3a9258aaad4eb230e957adbea8.jpg)"
+                    data-text="CheckPoint
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nostrum quidem eligendi est itaque perferendis, asperiores repudiandae ducimus quasi, molestias soluta nulla explicabo, aut ratione vitae consequatur earum deserunt ipsum?"></div>
+            </div>
+        </div>
+        <div class="divisao">
+            <img src="/Arquivo_img/Home_imagens/quebra-logo-checkpoint.png" alt="Logo do serviço checkpoint oferecido pela empresa Carfel">
+            <h1 id="planos">Planos</h1>
+            <div class="retangulo-divisao"></div>
+        </div>
+        <section>
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm4">
+                            <div class="box">
+                                <div class="imgBox">
+                                    <img src="/Arquivo_img/Home_imagens/left-image.jpg" alt="imagem do produto">
+                                </div>
+                                <div class="content">
+                                    <h3>Plano Grátis</h3>
+                                    <p>Utilize o produto gratuitamente com suporte para 2 funcionários.</p>
+                                    <br>
+                                    <button class="btn btn-default
+                                    btnD">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm4">
+                            <div class="box">
+                                <div class="imgBox">
+                                    <img src="/Arquivo_img/Home_imagens/left-image.jpg" alt="imagem do produto">
+                                </div>
+                                <div class="content">
+                                    <h3>Plano R$19,99</h3>
+                                    <p>Utilize o produto por apenas R$19,99 e tenha suporte para até 10 funcionários.</p>
+                                    <br>
+                                    <button class="btn btn-default
+                                    btnD">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm4">
+                            <div class="box">
+                                <div class="imgBox">
+                                    <img src="/Arquivo_img/Home_imagens/left-image.jpg" alt="imagem do produto">
+                                </div>
+                                <div class="content">
+                                    <h3>Plano 99,99</h3>
+                                    <p>Utilize o produto por apenas R$99,99 e tenha suporte ilimitado para todos
+                                        funcionários.</p>
+                                    <br>
+                                    <button class="btn btn-default
+                                    btnD">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- chat -->
+    <div class="floating-chat">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <div class="chat">
+            <div class="header">
+                <span class="title">
+                    Tire suas dúvidas rápidas
+                </span>
+                <button>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+
+            </div>
+            <ul class="messages">
+                <li class="other">Olá!</li>
+                <li class="self">Olá</li>
+                <li class="other">Como posso lhe ajudar?</li>
+                <li class="self">Não estou entendendo como o software funciona</li>
+                <li class="other">Ok, digite seu e-mail que todas as instruções serão encaminhadas</li>
+                <li class="self">presidente@hotmail.com</li>
+                <li class="other">Obrigado, as informações estão lá te esperando</li>
+            </ul>
+            <div class="footer">
+                <div class="text-box" contenteditable="true" disabled="true"></div>
+                <button id="sendMessage">send</button>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+
+
+    
+    <!-- fim do chat -->
+
+</body>

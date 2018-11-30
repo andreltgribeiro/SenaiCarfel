@@ -1,0 +1,35 @@
+@{
+    Layout = "MasterPageLogadoADM";
+}
+<html>
+    <link href="/css/CadastroUsuario.css" rel="stylesheet">
+<div class="formulario">
+        <div class="form-header">
+            <h1>Cadastro de usuário administrador</h1>
+            <p>
+            @ViewBag.Mensagem
+            </p> 
+           
+        </div>
+        <div class="form-container">
+            <form action="/Usuario/CadastroAdmin" method="Post">
+
+                <label>Nome</label>
+                <input type="text" name="nome" required = "true">
+                <br>
+            
+                <label>E-mail</label>
+                <input type="email" name="email" required = "true">
+
+                <label>
+                Senha
+                <input type="password" name="senha" required = "true">
+                </label>
+                <br>
+                <br>
+                <button type="submit">Salvar</button>          
+            </form>
+        </div>
+    </div>
+    </form>
+</html>

@@ -1,0 +1,210 @@
+*{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.Barra-Top{
+    position: sticky;
+    width: 100%;
+    background-color: #007db8;
+    padding-left: 8em;
+    padding-right: 8em;
+    padding-bottom:5px;
+    background:
+      linear-gradient(
+        to bottom, 
+        rgba(0,0,0,1) 0%,
+        /*purple rgba(92,7,52,1) 0%,*/
+        rgba(0,125,184,1) 100%
+      )
+      left 
+      bottom
+      #007db8   
+      no-repeat; 
+    background-size:100% 5px ;
+    z-index: 12;
+}
+#Inside-Barra-Top{
+    width: 100%;
+    display: flex;
+    padding: 0.8%;
+    align-items: center;
+    color: #aaa;
+}
+.Input-Busca{
+    height: 2.2em;
+    padding-right: 14px;
+    padding-left: 14px;
+    text-align: start;
+    width: 70%;
+    border: none;
+    outline: none;
+}
+#imagm{
+    margin-left: 15%;
+}
+.Barra-Top img{
+    width: 70px;
+    height: 60px;
+    
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.Container-Pesquisa{
+    width: 100%;
+    display: flex;
+    margin-left: 2%;
+}
+.btn {
+    background-color: #007db8;
+    border: 2px solid white;
+    font-size: 14px;
+    font-style: inherit;
+    font-weight: 600;
+    height: 2.1em;    
+    width: 5em;
+    text-align: center;
+    line-height: 1.428571429;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.btn:active{
+    background: rgba(102,102,102,1);
+    background: -moz-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(0,125,184,1) 12%, rgba(0,125,184,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(102,102,102,1)), color-stop(12%, rgba(0,125,184,1)), color-stop(100%, rgba(0,125,184,1)));
+    background: -webkit-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(0,125,184,1) 12%, rgba(0,125,184,1) 100%);
+    background: -o-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(0,125,184,1) 12%, rgba(0,125,184,1) 100%);
+    background: -ms-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(0,125,184,1) 12%, rgba(0,125,184,1) 100%);
+    background: linear-gradient(to bottom, rgba(102,102,102,1) 0%, rgba(0,125,184,1) 12%, rgba(0,125,184,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#007db8', GradientType=0 );
+}
+.Login{
+    display: flex;
+    margin-right: 16%;
+}
+
+.Login img{
+    height: 20px;
+    width: 20px;
+}
+.Login a{
+    
+    list-style-type: none;
+    color: white;
+    margin-left: .8em; 
+    font-size: .9em;
+}
+.Responsive-menu img{
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+.Barra-Menu{
+    background-color: #1DB9DD;
+    display: flex;
+    justify-content: space-between;
+    height: 3.5em;
+    
+}
+.Menu-left{
+    padding-left: 2em;
+    padding-top: 1em;
+    width: 33.3%;
+}
+.Menu-left img{
+    display: none;
+}
+.Menu-left a{
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+}
+.Menu-left a:hover{
+    text-shadow: 2px 2px rgb(102, 102, 102);
+}
+.Menu-Right a:hover{
+    text-shadow: 2px 2px rgb(102, 102, 102);
+}
+.Menu-left ul{
+    list-style-type: none; 
+    display: flex; 
+    justify-content: space-between;
+}
+.Menu-left li{
+    float: left;
+    display: flex;
+    text-align: center;
+}
+.Menu-fotos-middle{
+    padding-top: .3em;
+    width: 33.3%;
+}
+.Menu-fotos-middle ul{
+    list-style-type: none;
+    display: flex; 
+    justify-content: center;
+    
+}
+.Menu-fotos-middle li{
+    float: left;
+    margin-left: 1%;
+}
+.Menu-Right{
+    padding-right: 2em;
+    padding-top: 1em;
+    width: 33.3%
+}
+.Menu-Right a{
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+}
+.Menu-Right ul{
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-between;
+}
+.Menu-Right li{
+    float: left;
+}
+.Menu-fotos-middle img{
+    height: 45px;
+    width: 45px;
+}
+.Responsive-barra-menu-icon{
+    display: none;
+}
+.pagefooter{
+    padding: 1em;
+    height: 4em;
+    background-color: #007db8;
+    background:
+      linear-gradient(
+        to top, 
+        rgb(0, 0, 0) 0%,
+        /*purple rgba(92,7,52,1) 0%,*/
+        rgba(0,125,184,1) 100%
+      )
+      left 
+      top
+      #007db8   
+      no-repeat; 
+    background-size:100% 5px ;
+    z-index: 1;
+}
+.conteudo-footer{
+    color: #fff;
+    display: flex;
+    margin-top: .4em;
+    justify-content: left;
+}
+.conteudo-footer p{
+    margin-left: 5em;
+    font-size: 1.2em;
+}

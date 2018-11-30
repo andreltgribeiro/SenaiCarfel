@@ -1,0 +1,140 @@
+<html>
+    <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CheckPoint - Carfel</title>
+    <link href="/css/MasterPageDeslogado.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    
+    @RenderSection("style", required: false)
+</head>
+
+<body>
+
+    <div class="Menu">
+        <div class="Barra-Top">
+            <div id="Inside-Barra-Top">
+                <img id="imagm" src="/Arquivo_img/Home_imagens/logo-checkpoint.png" alt="Logo do serviço checkpoint oferecido pela empresa Carfel">
+                <div class="Container-Pesquisa">
+                    <input class="Input-Busca" type="text" placeholder="O que você está buscando?">
+                    <input class="btn" type="button" value="Buscar">
+                </div>
+                <div class="Login">
+                    <img src="/Arquivo_img/Home_imagens/img-men-login.png" alt="Login">
+                    <div class="a">
+                    <a href="/Usuario/Cadastro">Cadastro</a>
+                    </div>
+                </div>
+                <div data-toggler="#barraMenu" class="clickable Responsive-menu">
+                    <img src="/Arquivo_img/Home_imagens/menu-burger.png" alt="Menu">
+                </div>
+            </div>
+        </div>
+        <div class="Responsive-barra-menu">
+            <div id="barraMenu" class="Barra-Menu">
+                <div class="Menu-left">
+                    <ul>
+                        <li>
+                            <a href="/Home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Serviços</a>
+                        </li>
+                        <li>
+                            <a href="/Comentarios/ComentarioDeslogado">Comentários</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Menu-fotos-middle">
+                    <ul>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-whatsapp.png" alt="logo-Whatsapp">
+                        </li>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-facebook.png" alt="logo-Facebook">
+                        </li>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-twitter.png" alt="logo-Twitter">
+                        </li>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-instagram.png" alt="logo-Instagram">
+                        </li>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-linkedin.png" alt="logo-Linkedin">
+                        </li>
+                        <li>
+                            <img src="/Arquivo_img/Home_imagens/logo-google-plus.png" alt="logo-Google-Plus">
+                        </li>
+                    </ul>
+                </div>
+                <div class="Menu-Right">
+                    <ul>
+                        <li>
+                            <a href="/Formulario/Index">Formulário</a>
+                        </li>
+                        <li>
+                            <a href="/Faq/Index">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="Empresa/Index">Empresa</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Responsive-barra-menu-icon">
+                    <div id="barraMenu" class="Barra-Menu-icon">
+                        <div class="Menu-left-icon">
+                            <ul>
+                                <li>
+                                    <a href="/Home/Index"><img src="/Arquivo_img/Home_imagens/home.png" alt="home"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/Arquivo_img/Home_imagens/service.png" alt="serviços"></a>
+                                </li>
+                                <li>
+                                    <a href="/Comentarios/ComentarioDeslogado"><img src="/Arquivo_img/Home_imagens/contact.png" alt="contato"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Menu-Right-icon">
+                            <ul>
+                                <li>
+                                    <a href="/Formulario/Index"><img src="/Arquivo_img/Home_imagens/form.png" alt="Formulário"></a>
+                                </li>
+                                <li>
+                                    <a href="/Faq/Index"><img src="/Arquivo_img/Home_imagens/faq.png" alt="FAQ"></a>
+                                </li>
+                                <li>
+                                    <a href="/Empresa/Index"><img src="/Arquivo_img/Home_imagens/history.png" alt="História"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @RenderBody()
+    <!-- Footer -->
+    <footer>
+        <div class="pagefooter">
+            <div class="conteudo-footer">
+                <p>Sobre o carfel</p>
+                <p>Carreiras Profissionais</p>
+                <p>Comunidade</p>
+                <p>Eventos</p>
+                <p>Programa e Parceria</p>
+            </div>
+        </div>
+
+    </footer>
+    @RenderSection("script", required: false)
+</body>
+</html>

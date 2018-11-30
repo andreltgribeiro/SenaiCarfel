@@ -1,0 +1,30 @@
+@{
+    Layout = "MasterPageDeslogadoCadastroADM";
+}
+<html>
+    <link href="/css/LoginUsuario.css" rel="stylesheet">
+<div class="formulario">
+        <div class="form-header">
+            <h1>Fazer Login Administrador</h1>
+            <p>
+            @ViewBag.LoginFalha
+            </p> 
+        </div>
+        <div class="form-container">
+            <form action="/Usuario/CadastroAdmin" method="Post">           
+                <label>E-mail</label>
+                <input type="email" name="email" required = "true">
+                
+                <label>
+                Senha
+                <input type="password" name="senha" required = "true">
+                </label>
+                <br>
+                <br>
+                <button type="submit">Entrar</button>
+                         
+            </form>
+        </div>
+    </div>
+    </form>
+</html>
