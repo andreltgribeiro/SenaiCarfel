@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios;
 
@@ -7,6 +8,13 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 {
     public class UsuarioController : Controller
     {
+
+        public IUsuario UsuarioRepositorio {get; set;}
+
+        public UsuarioController()
+        {
+            UsuarioRepositorio = new UsuarioRepositorioSerializacao();
+        }
         
         [HttpGet]
         public IActionResult Cadastro (){
@@ -20,10 +28,8 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
             usuarioModel.Nome = form["nome"];
             usuarioModel.Email = form["email"];
             usuarioModel.Senha = form["senha"];
-            usuarioModel.ConfirmaSenha = form["confirmaSenha"];
                 
-            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
-            usuarioRepositorio.Cadastrar(usuarioModel);
+            UsuarioRepositorio.Cadastrar(usuarioModel);
 
             ViewBag.Mensagem = "Usuário Cadastrado";
 
@@ -42,9 +48,6 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
             usuarioModel.Email = form["email"];
             usuarioModel.Senha = form["senha"];
             usuarioModel.ConfirmaSenha = form["confirmaSenha"];
-                
-            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
-            usuarioRepositorio.CadastrarAdmin(usuarioModel);
 
             ViewBag.Mensagem = "Usuário Cadastrado";
 
@@ -60,8 +63,8 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
         public IActionResult Login(IFormCollection form){
             UsuarioModel usuario = new UsuarioModel( email: form["email"], senha: form["senha"]);
 
-            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
-            UsuarioModel usuarioModel = usuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);
+            
+            UsuarioModel usuarioModel = UsuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);
 
             if(usuarioModel != null){
                 if(usuarioModel.Email.Contains("admin@carfel.com")){
@@ -95,8 +98,8 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
         public IActionResult LoginAdmin(IFormCollection form){
             UsuarioModel usuario = new UsuarioModel( email: form["email"], senha: form["senha"]);
 
-            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
-            UsuarioModel usuarioModel = usuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);
+            
+            UsuarioModel usuarioModel = UsuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);
 
             
 

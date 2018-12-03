@@ -1,5 +1,8 @@
+using System;
+
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Models
 {
+    [Serializable]
     public class UsuarioModel
     {
         public string Nome { get; set; }

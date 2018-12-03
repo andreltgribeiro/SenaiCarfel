@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\44680479841\\Desktop\\Projeto Check_Point\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\Senai.Projeto.Carfel.CheckPoint.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\44680479841\\SenaiCarfel\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\Senai.Projeto.Carfel.CheckPoint.MVC.csproj",
       "projectName": "Senai.Projeto.Carfel.CheckPoint.MVC",
-      "projectPath": "C:\\Users\\44680479841\\Desktop\\Projeto Check_Point\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\Senai.Projeto.Carfel.CheckPoint.MVC.csproj",
+      "projectPath": "C:\\Users\\44680479841\\SenaiCarfel\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\Senai.Projeto.Carfel.CheckPoint.MVC.csproj",
       "packagesPath": "C:\\Users\\44680479841\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\44680479841\\Desktop\\Projeto Check_Point\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\obj\\",
+      "outputPath": "C:\\Users\\44680479841\\SenaiCarfel\\CheckPoint\\Senai.Projeto.Carfel.CheckPoint.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

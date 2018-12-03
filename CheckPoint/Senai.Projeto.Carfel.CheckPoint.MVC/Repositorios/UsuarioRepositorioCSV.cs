@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
+using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios
 {
-    public class UsuarioRepositorio
+    public class UsuarioRepositorioCSV : IUsuario
     {
         public UsuarioModel EmailSenha(string email, string senha)
         {
@@ -65,7 +66,7 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios
                 sw.WriteLine($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};0");
             }
             return usuario;
-        }
+        }   
         public UsuarioModel CadastrarAdmin(UsuarioModel usuario)
         {
             

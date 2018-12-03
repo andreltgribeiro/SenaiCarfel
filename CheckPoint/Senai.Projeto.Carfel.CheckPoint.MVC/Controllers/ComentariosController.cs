@@ -4,19 +4,24 @@ using Microsoft.AspNetCore.Mvc;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
+using System.Linq;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 {
     public class ComentariosController : Controller
     {
+        public IComentario ComentarioRepositorio {get; set;}
+
+        public ComentariosController(){
+            ComentarioRepositorio = new ComentarioRepositorioSerializacao();
+        }
         [HttpGet]
         public IActionResult Index(){
-            ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
 
             if(HttpContext.Session.GetString("tipoUsuario") == "1")
-                ViewData["Comentarios"] = comentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
             else
-                ViewData["Comentarios"] = comentarioRepositorio.ListarEMostrar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
 
             return View();
         }
@@ -26,13 +31,12 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 
             ComentarioModel comentarioModel = new ComentarioModel(texto: form["texto"],aprovado: false, nomeUsuario: HttpContext.Session.GetString("nomeUsuario"));
 
-            ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
-            comentarioRepositorio.Criar(comentarioModel);
+            ComentarioRepositorio.Criar(comentarioModel);
 
             if(HttpContext.Session.GetString("tipoUsuario") == "1")
-                ViewData["Comentarios"] = comentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
             else
-                ViewData["Comentarios"] = comentarioRepositorio.ListarEMostrar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
                 
                 TempData["Mensagem"] = "Comentário enviado para aprovação dos administradores";
 
@@ -40,31 +44,20 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
         }
         [HttpGet]
         public IActionResult AprovarComentarios(){
-            ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
-                ViewData["Comentarios"] = comentarioRepositorio.Listar();
+
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
            
             return View();
         }
 
         [HttpGet]
-        public IActionResult ListarEMostrar(){
-            ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
-            if(HttpContext.Session.GetString("tipoUsuario") == "1")
-                ViewData["Comentarios"] = comentarioRepositorio.Listar();
-            else
-                ViewData["Comentarios"] = comentarioRepositorio.ListarEMostrar();
-            
-            return View();
-        }
-
-        [HttpGet]
         public IActionResult ComentarioDeslogado (){
-            ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
+
 
             if(HttpContext.Session.GetString("tipoUsuario")== "1")
-            ViewData["Comentarios"] = comentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
             else
-                ViewData["Comentarios"] = comentarioRepositorio.ListarEMostrar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
 
             return View();
         }

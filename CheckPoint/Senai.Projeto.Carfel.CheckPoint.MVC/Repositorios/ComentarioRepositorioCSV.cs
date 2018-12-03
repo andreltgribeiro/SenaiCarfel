@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios {
-    public class ComentarioRepositorio {
+    public class ComentarioRepositorioCSV {
         public ComentarioModel Criar (ComentarioModel comentarioModel) {
 
             if (File.Exists ("comentarios.csv")) {
@@ -27,38 +27,6 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios {
         }
 
         public List<ComentarioModel> Listar () => LerCSV ();
-
-        public List<ComentarioModel> ListarEMostrar () => LerAprovadosDoCSV();
-        public List<ComentarioModel> LerAprovadosDoCSV (){
-            List<ComentarioModel> lsComentarios = new List<ComentarioModel> ();
-            if (File.Exists ("comentarios.csv")) {
-                string[] lines = File.ReadAllLines ("comentarios.csv");
-
-                foreach (string line in lines) {
-                    if (string.IsNullOrEmpty (line)) {
-
-                        continue;
-                    }
-
-                    string[] dadosLine = line.Split (';');
-                    if(dadosLine[4] == "1"){
-                        ComentarioModel comentario = new ComentarioModel (
-                            id: int.Parse (dadosLine[0]),
-                            nomeUsuario: dadosLine[1],
-                            texto: dadosLine[2],
-                            dataCriacao: DateTime.Parse (dadosLine[3]),
-                            aprovado: (dadosLine[4] == "1")
-                        );
-                        lsComentarios.Add(comentario);
-                    }
-
-                   
-                }
-            } 
-            return lsComentarios.OrderBy(x => x.DataCriacao).ToList();
-
-        }   
-
         private List<ComentarioModel> LerCSV () {
             List<ComentarioModel> lsComentarios = new List<ComentarioModel> ();
 
