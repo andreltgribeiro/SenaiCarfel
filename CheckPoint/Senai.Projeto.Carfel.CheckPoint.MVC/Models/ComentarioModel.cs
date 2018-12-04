@@ -2,6 +2,7 @@ using System;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Models
 {
+    [Serializable]
     public class ComentarioModel
     {
         public int Id { get; set; }
@@ -19,24 +20,6 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Models
             this.DataCriacao = dataCriacao;
             this.Aprovado = aprovado;
             this.nomeUsuario = nomeUsuario;
-
-            EscaparCaracteresTexto();
-        }
-
-        public void EscaparCaracteresTexto()
-        {
-            while (Texto.Contains("\n"))
-            {
-                Texto = Texto.Replace("\n", "\\r");
-            }
-        }
-
-        public void NormalizarCaracteres()
-        {
-            while (Texto.Contains("\\br"))
-            {
-                Texto = Texto.Replace("\\br", "\n");
-            }
         }
 
         public ComentarioModel() : this (0, null, DateTime.Now, false, null)

@@ -1,9 +1,4 @@
-/**
- * Oscuro: #283035
- * Azul: #03658c
- * Detalle: #c7cacb
- * Fondo: #dee1e3
- ----------------------------------*/
+
  * {
     margin: 0;
     padding: 0;
@@ -14,6 +9,22 @@
 .divisao {
     margin-top: 2em;
     text-align: center;
+}
+
+#Excluir{
+    text-align: center;
+    color: white;
+    margin-bottom: 1.7em;
+}
+.excluira{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 7px;
+    background-color: #006c9b;
+    color: white;
+    font-size: 0.70em;
+       
 }
 #planos{
     font-size: 2.4em;
@@ -148,8 +159,8 @@ body {
 * Avatar
 ---------------------------*/
 .comments-list .comment-avatar {
-   width: 65px;
-   height: 65px;
+   width: 75px;
+   height: 55px;
    position: relative;
    z-index: 99;
    float: left;

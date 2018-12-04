@@ -78,3 +78,4 @@ C:\Users\44680479841\SenaiCarfel\CheckPoint\Senai.Projeto.Carfel.CheckPoint.MVC\
 C:\Users\44680479841\SenaiCarfel\CheckPoint\Senai.Projeto.Carfel.CheckPoint.MVC\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.CheckPoint.MVC.dll
 C:\Users\44680479841\SenaiCarfel\CheckPoint\Senai.Projeto.Carfel.CheckPoint.MVC\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.CheckPoint.MVC.pdb
 C:\Users\44680479841\SenaiCarfel\CheckPoint\Senai.Projeto.Carfel.CheckPoint.MVC\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.CheckPoint.MVC.csproj.CopyComplete
+C:\Users\44680479841\SenaiCarfel\CheckPoint\Senai.Projeto.Carfel.CheckPoint.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Comentarios\ComentariosAprovados.g.cshtml.cs

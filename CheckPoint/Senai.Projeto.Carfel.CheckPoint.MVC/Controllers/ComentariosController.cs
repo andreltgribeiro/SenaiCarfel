@@ -5,6 +5,7 @@ using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
 using System.Linq;
+using System.Net.Mail;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 {
@@ -15,13 +16,14 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
         public ComentariosController(){
             ComentarioRepositorio = new ComentarioRepositorioSerializacao();
         }
+        
         [HttpGet]
         public IActionResult Index(){
 
             if(HttpContext.Session.GetString("tipoUsuario") == "1")
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => !x.Aprovado).ToList();
             else
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
 
             return View();
         }
@@ -34,9 +36,9 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
             ComentarioRepositorio.Criar(comentarioModel);
 
             if(HttpContext.Session.GetString("tipoUsuario") == "1")
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => !x.Aprovado).ToList();
             else
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
                 
                 TempData["Mensagem"] = "Comentário enviado para aprovação dos administradores";
 
@@ -45,9 +47,26 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
         [HttpGet]
         public IActionResult AprovarComentarios(){
 
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => !x.Aprovado).ToList();
            
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult ComentariosAprovados(){
+                if(HttpContext.Session.GetString("tipoUsuario") == "1")
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
+            else
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
+           
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult EnviarEmail(){
+            
+            
+            return RedirectToAction();
         }
 
         [HttpGet]
@@ -55,9 +74,9 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 
 
             if(HttpContext.Session.GetString("tipoUsuario")== "1")
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar();
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().ToList();
             else
-                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado);
+                ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
 
             return View();
         }
@@ -69,6 +88,15 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
             TempData["Mensagem"] = "Comentario excluído";
 
             return RedirectToAction("AprovarComentarios");
+        }
+        [HttpGet]
+        public IActionResult ExcluirAprovados(int id)
+        {
+            ComentarioRepositorio.Excluir(id);
+
+            TempData["Mensagem"] = "Comentario excluído";
+
+            return RedirectToAction("ComentariosAprovados");
         }
 
         [HttpGet]

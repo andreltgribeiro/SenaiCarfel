@@ -16,7 +16,8 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC
     {
         public static void Main(string[] args)
         {
-            UsuarioRepositorioSerializacao usuarioRepositorioSerializacao= new UsuarioRepositorioSerializacao();
+            ComentarioRepositorioSerializacao comentarioRepositorioSerializacao = new ComentarioRepositorioSerializacao();
+            UsuarioRepositorioSerializacao usuarioRepositorioSerializacao = new UsuarioRepositorioSerializacao();
             if(File.Exists("usuarios.dat")){
                 List<UsuarioModel> UsuariosSalvos = usuarioRepositorioSerializacao.LerArquivoSerializado();
             }else{
@@ -28,6 +29,20 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC
             usuarioModel.Administrador = true;
                 
             usuarioRepositorioSerializacao.Cadastrar(usuarioModel);
+            }
+
+            if(File.Exists("comentarios.dat")){
+                List<ComentarioModel> ComentariosSalvos = comentarioRepositorioSerializacao.LerArquivoSerializado();
+            }else{
+                ComentarioModel comentarioModel = new ComentarioModel();
+
+                comentarioModel.Aprovado = true;
+                comentarioModel.DataCriacao = DateTime.Now;
+                comentarioModel.Id = 1;
+                comentarioModel.nomeUsuario = "Administrador";
+                comentarioModel.Texto = "Escreva seu comentário sobre nosso produto!";
+
+                comentarioRepositorioSerializacao.Criar(comentarioModel);
             }
 
             CreateWebHostBuilder(args).Build().Run();

@@ -1,7 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Runtime.Serialization.Formatters.Binary;
+using Microsoft.AspNetCore.Http;
+using Senai.Projeto.Carfel.CheckPoint.MVC.Controllers;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 
@@ -26,11 +30,40 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios
             ComentariosSalvos.Add(comentario);
 
             EscreverNoArquivo();
+            EnviarEmail();
 
             return comentario;
         }
 
+        public void EnviarEmail(){
+            System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
+        client.Host = "smtp.gmail.com";
+        client.EnableSsl = true;
+        client.Credentials = new System.Net.NetworkCredential("carfelemail@gmail.com", "adminCarfel123");
+        MailMessage mail = new MailMessage();
+        mail.Sender = new System.Net.Mail.MailAddress("andreltgribeiro@gmail.com", "andreltgribeiro@gmail.com");
+        mail.From = new MailAddress("andreltgribeiro@gmail.com", "andreltgribeiro@gmail.com");
+        mail.To.Add(new MailAddress("carfelemail@gmail.com", "carfelemail@gmail.com"));
+        mail.Subject = "Comentários Carfel";
+        mail.Body = "Você tem um email para ser aprovado "; 
+        mail.IsBodyHtml = true;
+        mail.Priority = MailPriority.High;
+        try
+        {
+            client.Send(mail);
+        }
+        catch (System.Exception)
+        {
+           //trata erro
+        }
+        finally
+        {
+            mail = null;
+        }
+        }
+        
         public void EscreverNoArquivo(){
+            
             //MemoryStream: vai guardar os bytes da serialização
             MemoryStream memoria = new MemoryStream();
             //BinaryFormatter: Objeto que fará a serialização
