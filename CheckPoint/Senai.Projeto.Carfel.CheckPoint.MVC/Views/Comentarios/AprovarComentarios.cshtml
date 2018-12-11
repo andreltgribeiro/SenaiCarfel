@@ -14,12 +14,13 @@
     <link href="/css/Comentarios.css" rel="stylesheet" >
 </head>
 <body>
+
 <!-- Contenedor Principal -->
 	<div class="comments-container">
 		<div class="divisao">
             <img src="/Arquivo_img/Home_imagens/quebra-logo-checkpoint.png" alt="Logo do serviço checkpoint oferecido pela empresa Carfel">
             <h1 id="Comentarios">Aprovar ou Reprovar Comentarios</h1>
-			@TempData["Mensagem"]
+			<h3 class="mensagem">@TempData["Mensagem"]</h3>
             <div class="retangulo-divisao"></div>
         </div>
 
@@ -27,14 +28,27 @@
 			<li>
 				<div class="comment-main-level">
 					@foreach(ComentarioModel comentario in ViewData["Comentarios"] as List<ComentarioModel>){
+						<div id="popup1" class="overlay">
+							<div class="popup">
+								<h2 class="Text-head-popup">Confirmar Exclusão</h2>
+								<a class="close" href="#">&times;</a>
+								<div class="content">
+									<p>Deseja excluir permanentemente este comentário</p>
+									<div class="excluira">
+										<a href="/Comentarios/Excluir?id=@comentario.Id">Excluir Comentario</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="comment-main-level">
-							<!-- Avatar -->
+							
 							<div class="comment-avatar"><img src="https://banner2.kisspng.com/20180625/req/kisspng-computer-icons-avatar-business-computer-software-user-avatar-5b3097fcae25c3.3909949015299112927133.jpg" alt=""></div>
 							<div class="comment-box">
 								<div class="comment-head">
 									<h6 class="comment-name by-author"><a>@comentario.nomeUsuario</a></h6>
 									<span>@comentario.DataCriacao</span>
-									<a href="/Comentarios/Excluir?id=@comentario.Id"><i class="fa fa-times"></i></a>
+									<a href="#popup1"	><i class="fa fa-times"></i></a>
 									<a href="/Comentarios/Aprovar?id=@comentario.Id"><i class="fa fa-heart"></i></a>
 								</div>
 								<div class="comment-content">
@@ -48,5 +62,7 @@
 				</div>
 		</ul>
 	</div>
-	<h1 id="Excluir"><a class="excluira" href="/Comentarios/ComentariosAprovados">Excluir Comentarios</a></h1>
+	<div class="excluira">
+		<a  href="/Comentarios/ComentariosAprovados">Excluir Comentarios</a></h1>
+	</div>
 </body>

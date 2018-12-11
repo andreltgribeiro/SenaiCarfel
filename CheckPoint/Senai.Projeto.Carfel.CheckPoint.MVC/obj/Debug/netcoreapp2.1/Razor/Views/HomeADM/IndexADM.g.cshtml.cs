@@ -59,7 +59,7 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
             BeginContext(212, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a427d5f6c9a14a81ba30e04bf3946b42", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed548a0a900a46209afaef91fb9b90dd", async() => {
                 BeginContext(218, 53, true);
                 WriteLiteral("\r\n    <link href=\"/css/Home.css\" rel=\"stylesheet\" >\r\n");
                 EndContext();
@@ -79,7 +79,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(280, 5910, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08144f17548446feadd4e56668ced803", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0347843a92342f4b0b4ffcf887d9007", async() => {
                 BeginContext(286, 5897, true);
                 WriteLiteral(@"
     

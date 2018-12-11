@@ -23,26 +23,22 @@
 		<div class="divisao">
             <img src="/Arquivo_img/Home_imagens/quebra-logo-checkpoint.png" alt="Logo do serviço checkpoint oferecido pela empresa Carfel" />
             <h1 id="Comentarios">Comentarios</h1>
-			@TempData["Mensagem"]
+			<h3 class="mensagem">@TempData["Mensagem"]</h3>
             <div class="retangulo-divisao"></div>
         </div>
 		
 		@{
 			<ul id="comments-list" class="comments-list">
 				<li>
-					
-					
 						<div class='comment-main-level'>
 							<div class="comment-avatar"><img src="https://banner2.kisspng.com/20180625/req/kisspng-computer-icons-avatar-business-computer-software-user-avatar-5b3097fcae25c3.3909949015299112927133.jpg" alt="" /></div>
 							<form action = "/Comentarios" method="Post" class="comment-box">
 								<div class="comment-head">
 									<h6 class="comment-name by-author"><a>@Context.Session.GetString("nomeUsuario")</a></h6>
 									<span>Data  Comentário</span>
-									<i class="fa fa-times"></i>
-									<i class="fa fa-heart"></i>
 								</div>
-								<textarea name="texto" class="comment-textarea"></textarea>
-								<button type="submit">Enviar</button>
+								<textarea name="texto" class="comment-textarea" placeholder="Escreva aqui o seu comentário!"></textarea>
+								<button class = "btnEnviar" type="submit">Enviar</button>
 							</form>
 						</div>
 					 
@@ -57,8 +53,6 @@
 									<div class="comment-head">
 										<h6 class="comment-name by-author"><a>@item.nomeUsuario</a></h6>
 										<span>@item.DataCriacao</span>
-										<i class="fa fa-times"></i>
-										<i class="fa fa-heart"></i>
 									</div>
 									<div class="comment-content">
 									@item.Texto

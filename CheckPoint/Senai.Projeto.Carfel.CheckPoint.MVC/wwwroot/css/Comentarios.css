@@ -11,20 +11,26 @@
     text-align: center;
 }
 
-#Excluir{
-    text-align: center;
-    color: white;
-    margin-bottom: 1.7em;
-}
+
 .excluira{
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 7px;
-    background-color: #006c9b;
+    margin-bottom:20px;
+    width: 100%;
+    padding: 15px;
+    border-radius:  5px;
+    border: 1px solid #7ac9b7;
+    background: #007db8;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 30%;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    margin-bottom: 2em;
+}
+.excluira a{
     color: white;
-    font-size: 0.70em;
-       
+    text-decoration: none;
 }
 #planos{
     font-size: 2.4em;
@@ -35,7 +41,10 @@
     margin-right: auto; 
     background-color: #006c9b;
     height: 3px;
-    width: 200px;
+    width: 75%;
+}
+.mensagem{
+    color: red;
 }
 
 a {
@@ -53,11 +62,81 @@ body {
 }
 
 /** ====================
+* Configurando modal 
+=======================*/
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .popup p {
+    color: rgb(255, 0, 0);
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #006c9b;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+/** ====================
 * Lista de Comentarios
 =======================*/
 .comment-textarea{
     width: 680px;
-    height: 60px;
+    height: 120px;
+    resize: none
 }
 .comment-main-level{
     margin-bottom: 30px;
@@ -104,7 +183,7 @@ body {
    content: '';
    width: 2px;
    height: 100%;
-   background: #c7cacb;
+   background: #949494;
    position: absolute;
    left: 32px;
    top: 0;
@@ -113,7 +192,7 @@ body {
 .comments-list:after {
    content: '';
    position: absolute;
-   background: #c7cacb;
+   background: #949494;
    bottom: 0;
    left: 27px;
    width: 7px;
@@ -129,7 +208,7 @@ body {
    content: '';
    width: 60px;
    height: 2px;
-   background: #c7cacb;
+   background: #949494;
    position: absolute;
    top: 25px;
    left: -55px;

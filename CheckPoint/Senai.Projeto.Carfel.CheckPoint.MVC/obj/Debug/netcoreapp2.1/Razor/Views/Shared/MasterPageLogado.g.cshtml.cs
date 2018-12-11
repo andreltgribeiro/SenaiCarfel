@@ -48,7 +48,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<html>\r\n    <!DOCTYPE html>\r\n<html lang=\"pt-br\">\r\n\r\n");
             EndContext();
             BeginContext(89, 738, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecd0147c2ea24fa59acaa4be3fa8ff8d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0909e5047e3a49f3895f68cbb7dce35a", async() => {
                 BeginContext(95, 683, true);
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
@@ -89,7 +89,7 @@ Write(RenderSection("style", required: false));
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(831, 5504, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "068c98d2216740ddb9a714e629bc3e8b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "619b376bb26b48cfb60d72d965eb1d0b", async() => {
                 BeginContext(837, 704, true);
                 WriteLiteral(@"
 

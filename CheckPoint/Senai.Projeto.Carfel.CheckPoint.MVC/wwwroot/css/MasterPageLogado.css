@@ -5,7 +5,6 @@
     padding: 0;
 }
 .Barra-Top{
-    position: sticky;
     width: 100%;
     background-color: #007db8;
     padding-left: 8em;
@@ -72,6 +71,24 @@
     color: white;
     outline: none;
     cursor: pointer;
+}
+.btnEnviar {
+    background-color: #007db8;
+    border: 2px solid white;
+    font-size: 14px;
+    font-style: inherit;
+    font-weight: 600;
+    height: 2.1em;    
+    width: 5em;
+    text-align: center;
+    line-height: 1.428571429;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    margin-left: 89.8%;
+}
+.btnEnviar a{
+    color: white;
 }
 .btn:active{
     background: rgba(102,102,102,1);
